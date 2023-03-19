@@ -1,0 +1,155 @@
+/* general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background-color: #FF9A8B;
+    background-image: linear-gradient(330deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 3em;
+}
+
+.container {
+    gap: 20px;
+    width: 60%;
+    height: auto;
+    padding: 50px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.switch {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-bottom-left-radius: 100%;
+    cursor: pointer;
+
+    background-image: url("img/star.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: top 40% right 25%;
+}
+
+/* login page */
+.login .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login .container input,
+.login .container button {
+    width: 100%;
+    padding: 20px;
+    outline: transparent;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    transition: .5s;
+}
+
+.login .container button {
+    cursor: pointer;
+}
+
+.login .container button:hover {
+    border: 2px solid black;
+}
+
+.login .container input:active,
+.login .container input:focus {
+    border: 2px solid black;
+}
+
+#notification {
+    color: black;
+    opacity: 0;
+    transition: .3s;
+}
+
+/* admin page */
+.admin {
+    display: none;
+}
+
+.admin .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.userTile {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.userTile p:nth-child(1){
+    color: #FF6A88;
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 1240px) {
+    .admin .container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    section {
+        padding: 20px;
+    }
+    
+    .container {
+        padding: 20px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-height: 840px) {
+    section,
+    .container {
+        padding: 20px;
+        height: auto;
+    }
+}
