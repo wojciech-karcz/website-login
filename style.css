@@ -36,6 +36,12 @@ h1 {
     font-size: 3em;
 }
 
+@media screen and (max-width: 720px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
 .container {
     gap: 20px;
     width: 60%;
@@ -44,6 +50,7 @@ h1 {
     background-color: white;
     border: 3px solid black;
     border-radius: 20px;
+    position: relative;
 }
 
 .switch {
@@ -64,15 +71,33 @@ h1 {
     background-position: top 40% right 25%;
 }
 
+#linkLogin,
+#linkRegister {
+    color: lightgray;
+    cursor: pointer;
+    transition: .5s;
+    position: absolute;
+    bottom: 10px;
+    text-decoration: none;
+}
+
+#linkLogin:hover,
+#linkLogin:focus,
+#linkRegister:hover, 
+#linkRegister:focus {
+    color: black;
+}
+
 /* login page */
-.login .container {
+.container
+{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login .container input,
-.login .container button {
+.container input,
+.container button {
     width: 100%;
     padding: 20px;
     outline: transparent;
@@ -84,20 +109,22 @@ h1 {
     transition: .5s;
 }
 
-.login .container button {
+.container button {
     cursor: pointer;
 }
 
-.login .container button:hover {
+.container button:hover,
+.container button:focus {
     border: 2px solid black;
 }
 
-.login .container input:active,
-.login .container input:focus {
+.container input:active,
+.container input:focus {
     border: 2px solid black;
 }
 
-#notification {
+#registerNotification,
+#loginNotification {
     color: black;
     opacity: 0;
     transition: .3s;
@@ -116,10 +143,17 @@ h1 {
 .userTile {
     display: flex;
     flex-direction: column;
-    height: 150px;
+    min-height: 150px;
     border: 2px solid lightgray;
     border-radius: 20px;
     padding: 30px;
+}
+
+.userTile p,
+.container p,
+.container a {
+    padding: 5px 0;
+    text-align: center;
 }
 
 .userTile p:nth-child(1){
@@ -144,6 +178,11 @@ h1 {
         width: 100%;
         height: auto;
     }
+
+    #linkLogin,
+    #linkRegister {
+        position: static;
+    }
 }
 
 @media screen and (max-height: 840px) {
@@ -152,4 +191,21 @@ h1 {
         padding: 20px;
         height: auto;
     }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: lightgray;
 }

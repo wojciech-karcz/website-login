@@ -11,25 +11,38 @@
     <title>Login System</title>
 </head>
 <body>
-    <div class="switch">
 
-    </div>
+    <div class="switch"></div>
 
     <section class="admin" style="display: none;">
         <h1>Admin</h1>
         <div class="container"></div>
     </section>
 
-    <section class="login" style="display: flex;">
+    <section class="register" style="display: flex;">
         <h1>Create New Account</h1>
         <div class="container">
-            <input type="text" placeholder="full name" id="nameInput">
-            <input type="email" placeholder="email" id="emailInput" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-            <input type="password" placeholder="password" id="passwordInput">
-            <button id="submitBtn">register</button>
-            <p id="notification">placeholder</p>
+            <input type="text" placeholder="full name" id="registerNameInput">
+            <input type="email" placeholder="email" id="registerEmailInput">
+            <input type="password" placeholder="password" id="registerPasswordInput">
+            <button id="registerSubmitBtn">register</button>
+            <p id="registerNotification">placeholder</p>
+            <a id="linkLogin">you already have an account?</a>
         </div>
     </section>
+
+    <section class="login" style="display: none;">
+        <h1>Login Into Existing Account</h1>
+        <div class="container">
+            <input type="email" placeholder="email" id="loginEmailInput">
+            <input type="password" placeholder="password" id="loginPasswordInput">
+            <button id="loginSubmitBtn">login</button>
+            <p id="loginNotification">placeholder</p>
+            <a id="linkRegister">you don't have an account?</a>
+        </div>
+    </section>
+
     <script src="main.js"></script>
+
 </body>
 </html>
